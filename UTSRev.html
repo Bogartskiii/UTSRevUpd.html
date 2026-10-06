@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Understanding the Self – Comprehensive Reviewer</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fb;--fg:#1d2433;--mut:#5c667a;--card:rgba(255,255,255,.84);--line:rgba(40,60,110,.14);--g1:rgba(120,190,255,.45);--g2:rgba(255,190,150,.4);--g3:rgba(150,230,190,.38);--dot:rgba(60,80,140,.14);--hl:#fff3d6;--note:#fff2a0;--nt:#4a3d00;--blk:#3b4a6b;--blk2:#4a5b82;--hy:rgba(255,213,0,.5);--hg:rgba(70,210,110,.45);--hp:rgba(255,95,165,.38);--hb:rgba(70,165,255,.42);--mix:#000;--mixp:0%;--acc:#e0623d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1320;--fg:#e7eaf3;--mut:#9aa4b8;--card:rgba(26,32,50,.84);--line:rgba(160,180,255,.16);--g1:rgba(60,110,220,.35);--g2:rgba(170,80,160,.28);--g3:rgba(30,160,130,.28);--dot:rgba(170,190,255,.1);--hl:#3a3320;--note:#5a4f1a;--nt:#fff2c2;--blk:#56658a;--blk2:#6475a0;--mix:#fff;--mixp:38%}}
+:root[data-theme="dark"]{--bg:#0e1320;--fg:#e7eaf3;--mut:#9aa4b8;--card:rgba(26,32,50,.84);--line:rgba(160,180,255,.16);--g1:rgba(60,110,220,.35);--g2:rgba(170,80,160,.28);--g3:rgba(30,160,130,.28);--dot:rgba(170,190,255,.1);--hl:#3a3320;--note:#5a4f1a;--nt:#fff2c2;--blk:#56658a;--blk2:#6475a0;--mix:#fff;--mixp:38%}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;color:var(--fg);font:16px/1.65 Nunito,system-ui,sans-serif;background:radial-gradient(900px 520px at 6% -4%,var(--g1),transparent 62%),radial-gradient(800px 520px at 100% 8%,var(--g2),transparent 62%),radial-gradient(900px 600px at 50% 112%,var(--g3),transparent 62%),var(--bg);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(var(--dot) 1.2px,transparent 1.4px) 0 0/24px 24px;pointer-events:none;z-index:0}
+header,nav,main,footer{position:relative;z-index:1}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,#1f8a70,#5b5bd6,#e0623d);z-index:20}
+.hero{max-width:900px;margin:auto;padding:38px 22px 10px}
+.kick{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#1f8a70,#5b5bd6);padding:4px 12px;border-radius:99px}
+h1{font:700 2.3rem/1.15 Fraunces,Georgia,serif;margin:14px 0 8px}h1 em{font-style:normal;background:linear-gradient(90deg,#1f8a70,#5b5bd6 55%,#e0623d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:.92rem;max-width:640px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:18px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:.84rem;line-height:1.4;backdrop-filter:blur(6px)}.how b{display:block;font-size:.95rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--card);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);font-size:.8rem;margin-top:14px}
+nav div{max-width:900px;margin:auto;padding:8px 20px;display:flex;gap:6px;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:3px 12px;background:var(--card);font-weight:700}nav a:hover{border-color:var(--acc)}
+main{max-width:900px;margin:auto;padding:0 18px 120px}
+section{--a:#1f8a70;--at:color-mix(in srgb,var(--a),var(--mix) var(--mixp));margin-top:24px;padding:20px 22px 24px;background:var(--card);border:1px solid var(--line);border-top:6px solid var(--a);border-radius:22px;box-shadow:0 18px 40px -26px rgba(30,40,90,.5);backdrop-filter:blur(6px)}
+section:nth-of-type(6n+2){--a:#e0623d}section:nth-of-type(6n+3){--a:#5b5bd6}section:nth-of-type(6n+4){--a:#d99a1e}section:nth-of-type(6n+5){--a:#d6457a}section:nth-of-type(6n+6){--a:#2a8fc7}
+h2{font:700 1.45rem/1.25 Fraunces,Georgia,serif;color:var(--at);margin:0 0 6px}
+h3{font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;margin:20px 0 6px;color:var(--at);font-weight:800}
+ul{padding-left:1.2rem;margin:6px 0}li{margin:4px 0}li::marker{color:var(--at)}
+.box{background:var(--hl);border-left:5px solid var(--a);padding:10px 14px;border-radius:10px;margin:12px 0;font-size:.95rem;position:relative}
+.tw{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:540px}
+th,td{padding:7px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:color-mix(in srgb,var(--a) 16%,var(--card));color:var(--at);font-weight:800}tr:nth-child(even) td{background:color-mix(in srgb,var(--a) 4%,transparent)}
+code{background:var(--hl);border-radius:4px;padding:0 4px}
+footer{max-width:900px;margin:auto;padding:0 22px 100px;color:var(--mut);font-size:.8rem}
+.ann.hy{background:var(--hy)}.ann.hg{background:var(--hg)}.ann.hp{background:var(--hp)}.ann.hb{background:var(--hb)}
+.ann{border-radius:4px;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone;cursor:pointer}
+.blank{border-bottom:2px dashed var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent)}
+.study .blank:not(.rev),.qb main section b:not(.rev){color:transparent!important;text-shadow:none;background:repeating-linear-gradient(135deg,var(--blk) 0 6px,var(--blk2) 6px 12px);border-radius:6px;box-shadow:0 0 0 2px var(--blk);cursor:pointer;user-select:none;-webkit-user-select:none;border-bottom:0}
+.study .blank:not(.rev) *,.qb main section b:not(.rev) *{color:transparent!important}
+.note{background:var(--note);color:var(--nt);font:500 1.15rem/1.25 Caveat,'Comic Sans MS',cursive;border-radius:4px 4px 14px 4px;padding:8px 26px 8px 11px;margin:8px 0 8px 18px;box-shadow:0 6px 14px -8px rgba(0,0,0,.45);position:relative;transform:rotate(-.5deg);display:block;font-style:normal;font-weight:500;text-transform:none;letter-spacing:0}
+.note .q{font:600 .72rem Nunito,sans-serif;opacity:.7;margin-bottom:2px}.note .nt{min-height:1.3em;outline:0;white-space:pre-wrap}
+[contenteditable]:empty::before{content:attr(data-ph);opacity:.5}
+.x{position:absolute;top:2px;right:4px;border:0;background:transparent;color:inherit;font-size:1.15rem;cursor:pointer;opacity:.6;line-height:1}.x:hover{opacity:1}
+.pic{position:relative;margin:14px auto;max-width:560px;background:var(--card);padding:10px 10px 6px;border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.pic img{display:block;max-width:100%;margin:auto;border-radius:6px}.pic .x{top:-9px;right:-9px;background:#e0455d;color:#fff;width:24px;height:24px;border-radius:50%;opacity:1;font-size:1rem}
+.pic figcaption{font:500 1.1rem Caveat,cursive;text-align:center;padding:4px;outline:0}
+#tb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:4px;padding:6px;background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:99px;box-shadow:0 14px 34px -10px rgba(0,0,0,.45);max-width:96vw;overflow-x:auto}
+#tb button{border:0;background:transparent;color:var(--fg);font:700 .78rem Nunito,sans-serif;padding:8px 11px;border-radius:99px;cursor:pointer;white-space:nowrap}
+#tb button:hover{background:var(--hl)}#tb button.on{background:var(--acc);color:#fff}
+#pop{position:fixed;z-index:40;display:flex;gap:4px;align-items:center;padding:6px 8px;background:#1d2433;color:#fff;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.4)}
+#pop[hidden]{display:none}#pop button{border:0;color:#fff;background:transparent;font:700 .8rem Nunito,sans-serif;padding:6px 8px;border-radius:8px;cursor:pointer;-webkit-user-select:none;user-select:none}
+#pop .c{width:24px;height:24px;border-radius:50%;padding:0;border:2px solid #fff}#pop button:hover{background:#38425a}
+#pop.one .c,#pop.one .bk{display:none}
+#toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:#1d2433;color:#fff;padding:6px 14px;border-radius:99px;font-size:.8rem;opacity:0;transition:.3s;z-index:50;pointer-events:none}#toast.on{opacity:.95}
+@media(min-width:1400px){.note.side{float:right;clear:right;width:230px;margin:0 -275px 8px 14px}}
+@media(max-width:600px){h1{font-size:1.7rem}section{padding:16px 14px 20px}#tb button span{display:none}}
+@media print{body{background:#fff!important;color:#000}body::before,nav,#bar,#tb,#pop,.x,.how,#toast{display:none!important}section{box-shadow:none;backdrop-filter:none;break-inside:auto}.note.side{float:none!important;width:auto!important;margin:6px 0 6px 18px!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.part{margin:38px 4px -8px;font:800 .78rem Nunito,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);border-left:4px solid var(--acc);padding-left:10px}
+.box i{opacity:.85}
+</style>
+</head><body>
+<header><div class="hero"><span class="kick">GE · Understanding the Self</span>
+<h1>Understanding the Self<br><em>Comprehensive Reviewer</em></h1>
+<p class="sub">Philosophical, Sociological &amp; Anthropological, and Psychological perspectives on the self, built from your 3 lessons. Your highlights, notes and pictures are saved in this browser only.</p>
+<div class="how"><div>🖍<b>Highlight</b>Select any text, then pick a color.</div><div>🎯<b>Blank &amp; guess</b>Select text → <i>Blank</i>. Turn on <i>Study</i> to hide it; tap to reveal. <i>Hide terms</i> blanks every bold term at once.</div><div>📝<b>Side notes</b>Select text → <i>Note</i>. Notes sit beside or under the line.</div><div>🖼<b>Pictures</b>Paste (Ctrl/Cmd+V), drop, or use <i>Image</i>. Click a line first to choose where it goes.</div></div></div></header>
+<nav><div><a href="#phil">Philosophy</a><a href="#soc">Socrates</a><a href="#plato">Plato</a><a href="#aug">Augustine</a><a href="#desc">Descartes</a><a href="#locke">Locke</a><a href="#hume">Hume</a><a href="#kant">Kant</a><a href="#freud">Freud</a><a href="#ryle">Ryle</a><a href="#church">Churchland</a><a href="#mp">Merleau-Ponty</a><a href="#pcomp">Compare</a><a href="#socio">Sociology</a><a href="#mead">Mead</a><a href="#cooley">Cooley</a><a href="#goff">Goffman</a><a href="#anth">Anthropology</a><a href="#culture">Culture</a><a href="#fil">Filipino self</a><a href="#psy">Psychology</a><a href="#james">James</a><a href="#lester">Lester</a><a href="#winn">Winnicott</a><a href="#rog">Rogers</a><a href="#band">Bandura</a><a href="#ponder">Ponder</a><a href="#mine">My pictures</a></div></nav>
+<main>
+<div class="part">Part 1 · Philosophical Perspective on the Self</div>
+
+<section id="phil"><h2>What Is Philosophy?</h2>
+<div class="box"><b>You should be able to:</b> explain the foundational concepts and purpose of philosophy; differentiate philosophical perspectives on the nature of the self; construct a personal view of the self grounded in selected perspectives.</div>
+<ul><li><b>Etymology:</b> <b>philo</b> = loving + <b>sophia</b> = knowledge, wisdom. Philosophy is the <b>pursuit of wisdom, truth and knowledge</b>.</li>
+<li><b>Why study it?</b> To deepen understanding; by doing philosophy we learn to <b>think better</b>, <b>act more wisely</b>, and so improve the quality of all our lives.</li>
+<li>Philosophy is <i>not primarily</i> the study of other people's ideas. It is first the attempt to state <b>our own views</b> clearly, convincingly and interestingly.</li>
+<li><b>Big questions:</b> What is the meaning of life? Does God exist? Do we have free will? What is beauty? What is a just society? And the central one here: <b>Who am I?</b></li></ul>
+<h3>Thought experiment: Ship of Theseus</h3>
+<p>An ancient ship in a museum slowly rots, and its planks are replaced with identical new ones until <b>every part</b> has been replaced. Is it still the same ship, or a completely different one? (This is the problem of <b>personal identity</b>: are you the same person after all your cells and experiences change?)</p>
+<h3>Thinkers covered</h3>
+<p>Socrates · Plato · St. Augustine · René Descartes · John Locke · David Hume · Immanuel Kant · Sigmund Freud · Gilbert Ryle · Paul Churchland · Maurice Merleau-Ponty</p></section>
+
+<section id="soc"><h2>Socrates</h2>
+<ul><li>Known as the <b>Father of Western Philosophy</b>. Developed the <b>Socratic Method</b>: dialectical questioning that stimulates critical thinking and uncovers knowledge by asking and answering questions.</li>
+<li><b>Soul (psyche)</b> is the key to his idea of the self. The soul is <b>immortal</b>; death is not the end but the <b>separation of the soul from the body</b>.</li>
+<li>The soul is the <b>true essence</b> of a person, not the body, possessions or social status. <b>Caring for the soul</b> is the main task of philosophy.</li>
+<li><b>"Know thyself"</b>: the first step in caring for the soul is self-knowledge, through <b>introspection</b> and <b>critical self-examination</b>, essential to human flourishing.</li>
+<li>The purpose of life is the <b>good life</b>, possible only when the soul is in good condition, cultivated through <b>knowledge, wisdom and virtue</b>.</li></ul>
+<div class="box">“The unexamined life is not worth living.”</div>
+<p><b>True self = the virtuous self</b>: defined by <b>moral character</b>, not by wealth, power or appearance.</p></section>
+
+<section id="plato"><h2>Plato</h2>
+<ul><li>Socrates's most famous student; founded <b>Plato's Academy</b>, the first institution of higher learning in the Western world.</li>
+<li><b>The human person: a dichotomy.</b> <b>Body</b> = material, visible, destructible. <b>Soul</b> = immaterial, invisible, indestructible. The soul is the true essence; the body is a temporary vessel that hinders the soul from grasping truth and wisdom.</li>
+<li><b>Theory of Forms:</b> the physical world we sense is not true reality, only a <b>shadow or imitation</b> of a higher, eternal realm of perfect, non-material <b>Forms (Ideas)</b>.</li>
+<li><b>Allegory of the Cave:</b> prisoners are chained in a dark cave watching <b>shadows</b> on a wall cast by objects behind them. The shadows = the material world that most people mistake for reality. The real objects = the <b>Forms</b>, true reality outside the cave, which only the <b>philosopher</b> perceives by turning toward the <b>light of reason</b>.</li></ul>
+<h3>Tripartite theory of the soul</h3>
+<div class="tw"><table><tr><th>Part</th><th>Role</th></tr>
+<tr><td><b>Rational</b></td><td>Thinking, analyzing, decision-making; seeks truth and wisdom</td></tr>
+<tr><td><b>Spirited</b></td><td>Source of emotions such as courage, anger, ambition; sense of honor</td></tr>
+<tr><td><b>Appetitive</b></td><td>Physical desires: hunger, thirst, sexual urges</td></tr></table></div>
+<ul><li><b>Allegory of the Chariot:</b> the soul is a chariot driven by a <b>charioteer (reason)</b> controlling two horses: one <b>noble and spirited</b> (will/emotions) and one <b>unruly and appetitive</b> (base desires). Balance, truth and enlightenment come only when reason controls both.</li></ul>
+<p><b>True self = the rational soul</b>: the part that seeks knowledge, contemplates eternal truths and aspires to the realm of the Forms.</p></section>
+
+<section id="aug"><h2>St. Augustine of Hippo</h2>
+<ul><li>Influential Christian philosopher and theologian of <b>Late Antiquity</b>; bridged Greek philosophy (especially Plato) with early Christian doctrine.</li>
+<li><b>Unity of body and soul.</b> Body = mortal, tied to earthly desires. Soul = immortal, created by God to know and love Him. The soul is superior and its well-being comes first; the body is <b>not evil</b> but must be guided by the soul.</li>
+<li><b>The self is the soul in relationship with God.</b> Identity is rooted not in reason alone but in our capacity to <b>love, choose and believe</b>. Fulfillment comes from a personal relationship with God, not from earthly knowledge or pleasure.</li></ul>
+<div class="box">“You have made us for yourself, O Lord, and our hearts are restless until they rest in you.”</div>
+<ul><li><b>Divided will:</b> a result of the <b>Fall of Man</b>. We often know the good but fail to do it because of disordered desires. This inner conflict is <b>concupiscence</b>, the inclination to sin.</li>
+<li>Echoes Plato's tripartite soul, but grounded in theology: the self is torn between the love of self (<b>cupiditas</b>) and the love of God (<b>caritas</b>).</li>
+<li><b>Self-knowledge and divine illumination:</b> agrees with "know thyself" but adds that self-knowledge must lead to <b>God-knowledge</b>, because the soul reflects the image of its Creator. True knowledge is possible only through <b>divine illumination</b>: God enlightens the mind to grasp eternal truths.</li></ul>
+<p><b>True self = the soul oriented toward God</b>; whole through faith, grace and the pursuit of divine truth, not earthly pleasure, reason alone or appearance.</p></section>
+
+<section id="desc"><h2>René Descartes</h2>
+<ul><li>French philosopher, mathematician and scientist; the <b>Father of Modern Philosophy</b>. Unified algebra and geometry into <b>analytic geometry</b>.</li>
+<li><b>Mind–body dualism:</b> two distinct substances. <b>Body</b> = physical, material, extended in space. <b>Mind</b> = non-physical, immaterial, seat of consciousness and thought. The body can be doubted; the <b>mind is certain</b> because thinking occurs there.</li>
+<li><b>The thinking self:</b> the essence of the self is <b>thought</b>. Doubting, understanding, affirming, denying, imagining and willing prove the self exists even if everything else is uncertain.</li></ul>
+<div class="box">“I think, therefore I am.” (<i>Cogito, ergo sum</i>)</div>
+<ul><li><b>Rationalism:</b> reason, not sensory experience, is the primary source of knowledge. He <b>distrusted the senses</b> (they deceive); <b>clear and distinct ideas</b> reached by reason are the basis of certainty.</li></ul>
+<p><b>True self = the mind</b>, a rational thinking entity; to be human is to think.</p></section>
+
+<section id="locke"><h2>John Locke</h2>
+<ul><li>English philosopher and physician; leading thinker of the <b>Enlightenment</b>; <b>Father of Liberalism</b> (individual rights, government by consent).</li>
+<li><b>Tabula rasa (blank slate):</b> rejected innate ideas. The mind at birth is blank; <b>all knowledge comes from experience</b>.</li>
+<li><b>Empiricism:</b> knowledge comes only from <b>sense experience</b> (see, hear, touch, taste, smell). The mind receives data, forms <b>simple ideas</b>, then combines them into <b>complex ones</b>. Sense experience is the ultimate judge of ideas, directly opposing Rationalism.</li>
+<li><b>The self:</b> not an immaterial thinking substance (Descartes) but a <b>continuously developing consciousness</b> shaped by experience, formed by <b>memories</b> of sensory experiences and our reflection on them.</li></ul>
+<p><b>Personal identity = continuity of consciousness, especially through memory.</b></p>
+<h3>Rationalism vs. Empiricism</h3>
+<div class="tw"><table><tr><th></th><th>Rationalism</th><th>Empiricism</th></tr>
+<tr><td>Main source of knowledge</td><td><b>Reason</b></td><td><b>Experience</b> and sensory observation</td></tr>
+<tr><td>Philosophers</td><td>Descartes, Spinoza, Leibniz</td><td>Locke, Berkeley, Hume</td></tr>
+<tr><td>Type of knowledge</td><td><b>A priori</b> (independent of experience)</td><td><b>A posteriori</b> (gained through experience)</td></tr>
+<tr><td>The senses</td><td>Distrusted (may deceive)</td><td>Trusted as the foundation</td></tr></table></div></section>
+
+<section id="hume"><h2>David Hume</h2>
+<ul><li>Scottish philosopher, historian and economist; <b>Scottish Enlightenment</b>. Pushed empiricism to its logical extremes; skeptical about reason, personal identity and causation.</li>
+<li><b>Radical empiricism:</b> the mind begins as a blank slate and receives <b>impressions</b> (vivid sensory experiences), which give rise to <b>ideas</b> (faint copies of impressions). All thoughts and concepts derive from experience.</li>
+<li><b>Skepticism about the self:</b> there is no permanent self beyond experiences. The "self" is a <b>bundle of perceptions</b>, a shifting stream of sensations, thoughts, emotions and memories.</li></ul>
+<div class="box">“I never can catch myself at any time without a perception, and never can observe anything but the perception.”</div>
+<ul><li><b>Bundle Theory:</b> the self is not a single unified substance but a collection of perceptions connected by <b>habits of thought and memory</b>. We wrongly assume they belong to one unchanging self; it is a <b>mental construct</b>.</li>
+<li><b>Causation:</b> we never perceive cause and effect, only one event following another. Belief in causation is <b>habit</b>, not logical certainty.</li></ul>
+<p><b>True self:</b> a fluid, ever-changing collection of experiences with no fixed "I". Personal identity is more a <b>psychological illusion</b> than a metaphysical reality.</p></section>
+
+<section id="kant"><h2>Immanuel Kant</h2>
+<ul><li>Central figure of modern philosophy (metaphysics, epistemology, ethics, aesthetics).</li>
+<li><b>Reason and morality:</b> morality must be grounded in <b>reason</b>, not religion, emotion or consequences. Moral principles must be discoverable by rational thought, independent of doctrine. To judge what is right, ask: <i>What would reason require of all rational beings in this situation?</i></li></ul>
+<div class="tw"><table><tr><th>Imperative</th><th>Meaning</th></tr>
+<tr><td><b>Hypothetical</b></td><td>Conditional commands based on personal desires or goals</td></tr>
+<tr><td><b>Categorical</b></td><td>Unconditional moral obligations that apply to everyone regardless of desires or consequences</td></tr></table></div>
+<h3>Formulations of the Categorical Imperative</h3>
+<div class="box"><b>#1 Universality:</b> “Act only according to that maxim whereby you can at the same time will that it should become a universal law.”</div>
+<div class="box"><b>#2 Humanity:</b> “Act in such a way that you treat humanity, whether in your own person or in the person of another, always at the same time as an end and never merely as a means.”</div>
+<ul><li><b>Good Will and moral duty:</b> an action is moral because of its <b>motive</b>, not its result. The only thing good without qualification is the <b>Good Will</b>, the will to do one's duty simply because it is right, out of respect for the moral law, not for benefit or emotional reward.</li>
+<li><b>True self:</b> the <b>moral self</b> shows when we act from rational commitment to duty, not instinct, emotion or social pressure. The true self is <b>autonomous</b> (self-governing through reason). To be truly human is to freely choose what is right, guided by principles that apply universally to all rational beings.</li></ul>
+<h3>Dilemmas used in class</h3>
+<ul><li><b>Murderer at the door:</b> a murderer asks if your hiding friend is inside. Lie or tell the truth?</li>
+<li><b>Trolley problem:</b> pull the lever to divert a trolley and kill one person to save five, or do nothing and let it kill five?</li></ul></section>
+
+<section id="freud"><h2>Sigmund Freud</h2>
+<ul><li>Austrian neurologist, philosopher and psychologist; <b>Father of Psychoanalysis</b> (unconscious mind, childhood experiences).</li>
+<li><b>Psychoanalysis</b> = a theory of personality <i>and</i> a therapeutic method. People are strongly influenced by <b>unconscious</b> thoughts, feelings, desires and memories, many rooted in early childhood. Therapy aims to bring unconscious material into <b>conscious awareness</b> to resolve deep-seated conflicts and anxieties.</li></ul>
+<div class="tw"><table><tr><th>Level of mind</th><th>Description</th></tr>
+<tr><td><b>Conscious</b></td><td>Thoughts and perceptions we are currently aware of</td></tr>
+<tr><td><b>Preconscious</b></td><td>Memories just below the surface, recalled with effort</td></tr>
+<tr><td><b>Unconscious</b></td><td>Deep-seated drives, fears and desires that influence behavior without awareness</td></tr></table></div>
+<div class="tw"><table><tr><th>Element</th><th>Principle</th><th>Function</th></tr>
+<tr><td><b>Id</b></td><td>Pleasure principle</td><td>Seeks immediate gratification of instinctual drives (hunger, sex, aggression)</td></tr>
+<tr><td><b>Ego</b></td><td>Reality principle</td><td>Mediates between id and the external world; makes rational decisions</td></tr>
+<tr><td><b>Superego</b></td><td>Morality principle</td><td>Strives for perfection; judges the ego's actions</td></tr></table></div>
+<div class="box">“The ego is the actual seat of anxiety.”</div>
+<h3>Defense mechanisms (unconscious strategies that distort reality to reduce anxiety)</h3>
+<div class="tw"><table><tr><th>Mechanism</th><th>Meaning</th></tr>
+<tr><td><b>Repression</b></td><td>Most basic; pushes threatening thoughts/impulses into the unconscious</td></tr>
+<tr><td><b>Reaction formation</b></td><td>Behaving opposite to one's unacceptable desires (often exaggerated or compulsive)</td></tr>
+<tr><td><b>Displacement</b></td><td>Redirecting emotions to a safer or more acceptable object/person</td></tr>
+<tr><td><b>Fixation</b></td><td>Stuck in an earlier psychosexual stage due to unresolved conflict</td></tr>
+<tr><td><b>Regression</b></td><td>Reverting to behavior of an earlier developmental stage under stress</td></tr>
+<tr><td><b>Projection</b></td><td>Attributing one's own unacceptable thoughts/feelings to someone else</td></tr>
+<tr><td><b>Introjection</b></td><td>Internalizing the qualities or values of another person (parent, role model) into one's ego</td></tr>
+<tr><td><b>Sublimation</b></td><td>Transforming unacceptable impulses into socially acceptable or creative activity (art, music, literature)</td></tr></table></div>
+<h3>Psychosexual stages</h3>
+<div class="tw"><table><tr><th>Stage</th><th>Age</th><th>Focus</th></tr>
+<tr><td><b>Oral</b></td><td>0–1</td><td>Pleasure centers on the mouth (sucking, biting)</td></tr>
+<tr><td><b>Anal</b></td><td>1–3</td><td>Control and elimination (toilet training)</td></tr>
+<tr><td><b>Phallic</b></td><td>3–6</td><td>Attention shifts to genitals; Oedipus/Electra complex</td></tr>
+<tr><td><b>Latency</b></td><td>6–12</td><td>Sexual impulses dormant; social and intellectual development</td></tr>
+<tr><td><b>Genital</b></td><td>12+</td><td>Mature sexual interests; relationships and reproduction</td></tr></table></div></section>
+
+<section id="ryle"><h2>Gilbert Ryle</h2>
+<ul><li>20th-century British philosopher (Oxford); philosophy of mind; key figure in <b>ordinary language philosophy</b>; known for his critique of <b>Cartesian dualism</b>.</li>
+<li>Rejected Descartes's view of a material body plus an immaterial mind, calling it the <b>“ghost in the machine”</b>, a misleading metaphor.</li>
+<li><b>Category mistake:</b> describing something as if it belongs to a category it does not. Descartes made one by treating the mind as a separate thing parallel to the body instead of seeing mental life as <b>behaviors and dispositions</b> rooted in physical actions.</li></ul>
+<p><b>The self as behavior:</b> not a hidden non-material substance but defined by <b>observable behavior, actions and dispositions</b>. To talk about someone's mind is to talk about how they act, respond and engage with the world.</p></section>
+
+<section id="church"><h2>Paul Churchland</h2>
+<ul><li>Contemporary American philosopher (philosophy of mind, neuroscience, AI); leading advocate of <b>eliminative materialism</b>.</li>
+<li><b>Materialism:</b> everything about consciousness (thoughts, emotions, identity) is explained by <b>brain activity</b>. The self is not a non-physical soul; <b>the self is the brain</b>.</li>
+<li><b>Eliminative materialism:</b> concepts like beliefs, desires and intentions belong to <b>folk psychology</b>, an outdated, pre-scientific framework.</li>
+<li><b>Role of neuroscience:</b> brain scans and neural data give more accurate insight; understanding of consciousness will shift from subjective concepts to scientific models rooted in biology and physics.</li>
+<li><b>Self as a neurobiological system:</b> not fixed or permanent but a dynamic, evolving system of neurons shaped by <b>genetics, environment and experience</b>. Personality, memory, identity and consciousness are <b>emergent properties</b> of brain processes.</li>
+<li>Changes in brain chemistry or structure (injury, drugs, disease) alter the self, so the self is <b>inseparable from the body</b>.</li></ul></section>
+
+<section id="mp"><h2>Maurice Merleau-Ponty</h2>
+<ul><li>French <b>phenomenological</b> philosopher (consciousness, perception, embodiment, lived experience); contemporary of Sartre and de Beauvoir; key figure in existential and phenomenological thought.</li>
+<li><b>Embodied subjectivity:</b> rejected mind-body dualism. The body is not just a physical object but essential to how we experience the world. <b>The body is the subject</b>: we don't merely <i>have</i> a body, we <i>are</i> our body.</li>
+<li><b>The lived body (<i>corps vécu</i>):</b> not something observed from outside but the <b>medium</b> through which we experience the world; the <b>self-in-action</b>. Through it we see, touch, speak, feel joy or pain and make meaning.</li>
+<li><b>Perception</b> is the foundation of knowledge: before we think or theorize we experience through the senses. It is <b>active and interpretative</b>, and meaning arises from bodily interaction with the world.</li></ul>
+<p><b>The self = embodied consciousness:</b> a living, sensing, moving body that experiences and interprets the world; neither a disembodied mind nor a mechanical brain. You can't separate thought from movement, emotion from gesture, or identity from physical presence.</p></section>
+
+<section id="pcomp"><h2>Philosophers at a Glance</h2>
+<div class="tw"><table><tr><th>Thinker</th><th>The self is…</th><th>Key terms</th></tr>
+<tr><td><b>Socrates</b></td><td>The virtuous soul</td><td>Know thyself, Socratic method, psyche</td></tr>
+<tr><td><b>Plato</b></td><td>The rational soul</td><td>Forms, cave, tripartite soul, chariot</td></tr>
+<tr><td><b>St. Augustine</b></td><td>The soul oriented toward God</td><td>Divided will, cupiditas/caritas, illumination</td></tr>
+<tr><td><b>Descartes</b></td><td>The thinking mind</td><td>Dualism, cogito, rationalism</td></tr>
+<tr><td><b>Locke</b></td><td>Continuity of consciousness (memory)</td><td>Tabula rasa, empiricism</td></tr>
+<tr><td><b>Hume</b></td><td>A bundle of perceptions; an illusion</td><td>Impressions/ideas, bundle theory</td></tr>
+<tr><td><b>Kant</b></td><td>The autonomous, moral, rational self</td><td>Categorical imperative, good will</td></tr>
+<tr><td><b>Freud</b></td><td>Id–ego–superego, largely unconscious</td><td>Defense mechanisms, psychosexual stages</td></tr>
+<tr><td><b>Ryle</b></td><td>Behavior and dispositions</td><td>Ghost in the machine, category mistake</td></tr>
+<tr><td><b>Churchland</b></td><td>The brain</td><td>Eliminative materialism, folk psychology</td></tr>
+<tr><td><b>Merleau-Ponty</b></td><td>Embodied consciousness</td><td>Lived body, embodied subjectivity</td></tr></table></div>
+<div class="box"><b>Study grouping:</b> <b>Soul-based</b> (Socrates, Plato, Augustine) · <b>Mind-based</b> (Descartes) · <b>Experience-based</b> (Locke, Hume) · <b>Moral/rational</b> (Kant) · <b>Unconscious</b> (Freud) · <b>Anti-dualist</b> (Ryle, Churchland, Merleau-Ponty).</div></section>
+
+<div class="part">Part 2 · Sociological &amp; Anthropological Perspectives on the Self</div>
+
+<section id="socio"><h2>What Is Sociology?</h2>
+<div class="box"><b>You should be able to:</b> define sociology; explain the "I" and "Me"; explain the looking-glass self and give real examples; describe the dramaturgical approach; define anthropology and its four branches; define culture; compare self in individualistic vs. collectivistic cultures; describe kapwa, hiya, pakikisama, utang na loob.</div>
+<ul><li><b>Sociology:</b> the systematic study of <b>human society and social behavior</b>; how people interact in groups, institutions and cultures; focuses on patterns, relationships and social influences.</li>
+<li><b>Society:</b> a group of individuals who share a <b>common culture</b>, live within a <b>defined territory</b>, and interact through <b>shared norms and institutions</b>. Society shapes individual behavior and beliefs.</li>
+<li>Analyzed through categories: <b>ethnicity, religion, socioeconomic status, gender identity, sexual orientation, age</b>.</li>
+<li><b>The sociological perspective:</b> (1) <b>Seeing the general in the particular</b>; (2) <b>Seeing the strange in the familiar</b>.</li></ul></section>
+
+<section id="mead"><h2>George Herbert Mead</h2>
+<ul><li>American philosopher, sociologist and psychologist; key figure in <b>symbolic interactionism</b>.</li>
+<li>The self is <b>not present at birth</b>; it emerges through <b>social interaction</b>, especially communication with <b>symbols</b> (language, gestures).</li>
+<li><b>Role-taking:</b> we learn to see ourselves from others' perspectives; central to self-awareness.</li>
+<li><b>“I”</b> = spontaneous, impulsive, creative aspect. <b>“Me”</b> = socialized, reflective, rule-following aspect. The self is a dynamic interplay between the two.</li></ul>
+<h3>Stages of self-development</h3>
+<div class="tw"><table><tr><th>Stage</th><th>Age</th><th>What happens</th></tr>
+<tr><td><b>Preparatory</b></td><td>0–2</td><td>Children <b>imitate</b> others; no understanding of roles yet</td></tr>
+<tr><td><b>Play</b></td><td>3–6</td><td><b>Role-playing</b> (parent, doctor, teacher); take the role of <b>significant others</b></td></tr>
+<tr><td><b>Game</b></td><td>7 and up</td><td>Understand and follow <b>rules</b>; consider multiple roles/perspectives at once</td></tr></table></div>
+<p><b>Generalized other:</b> the internalized sense of society's attitudes, expectations and norms. We use it to evaluate our behavior and align with social norms; crucial for functioning as members of a larger society.</p></section>
+
+<section id="cooley"><h2>Charles Cooley</h2>
+<ul><li>American sociologist, best known for the <b>Looking-Glass Self</b>: our self-concept is shaped by our perceptions of <b>how others see us</b>.</li></ul>
+<div class="tw"><table><tr><th>Step</th><th>Process</th></tr>
+<tr><td>1</td><td>We <b>imagine how we appear</b> to others</td></tr>
+<tr><td>2</td><td>We <b>imagine how others judge</b> our appearance</td></tr>
+<tr><td>3</td><td>We develop a <b>self-feeling</b> based on our perception of their judgment</td></tr></table></div></section>
+
+<section id="goff"><h2>Erving Goffman</h2>
+<ul><li>Canadian-American sociologist; symbolic interactionism and the <b>presentation of the self in everyday life</b>.</li>
+<li><b>Dramaturgical approach:</b> social life is a <b>theatrical performance</b>; people are <b>actors on a stage</b>.</li>
+<li><b>The self as performance:</b> not a fixed identity but constructed through social interaction; roles change with <b>context and audience</b>.</li>
+<li><b>Front stage:</b> where people perform roles in formal or public settings. <b>Back stage:</b> where they drop public roles and are more authentic or relaxed.</li>
+<li><b>Impression management:</b> actively controlling the image we project through <b>appearance, language, gestures and setting</b>, to influence others' perceptions and maintain a desired self-image.</li>
+<li><b>Face:</b> the positive social value a person claims for themselves in interactions. <b>Face-work:</b> strategies to maintain dignity and avoid embarrassment.</li></ul></section>
+
+<section id="anth"><h2>What Is Anthropology?</h2>
+<ul><li>The <b>scientific study of humanity across time and space</b>: human behavior, biological and cultural evolution, social and belief systems, language and communication. It explores present and past, including fossil records and extinct human species.</li></ul>
+<h3>Four major branches</h3>
+<div class="tw"><table><tr><th>Branch</th><th>Studies</th></tr>
+<tr><td><b>Sociocultural</b></td><td>Contemporary cultures, social practices, institutions; kinship, religion, politics, economy, globalization</td></tr>
+<tr><td><b>Linguistic</b></td><td>Language in social and cultural contexts; how language shapes communication, identity and worldview</td></tr>
+<tr><td><b>Biological (Physical)</b></td><td>Human biological diversity and evolution; genetics, primatology, <b>paleoanthropology</b> (fossil humans)</td></tr>
+<tr><td><b>Archaeological</b></td><td>Past societies through material remains: artifacts, architecture, landscapes</td></tr></table></div></section>
+
+<section id="culture"><h2>Culture &amp; the Self Across Cultures</h2>
+<ul><li><b>Culture:</b> the set of <b>learned</b> behaviors, beliefs, values, norms, symbols and practices <b>shared</b> by members of a society or group (language, religion, food, clothing, social rules, moral codes).</li>
+<li><b>Defining features:</b> culture is <b>learned</b>, <b>shared</b>, <b>symbolic</b>, <b>adaptive and dynamic</b>, and <b>integrated</b>.</li></ul>
+<div class="tw"><table><tr><th></th><th>Western (individualistic)</th><th>Non-Western (collectivistic)</th></tr>
+<tr><td>Values</td><td>Personal freedom, independence</td><td>Group harmony, social roles</td></tr>
+<tr><td>Emphasis</td><td>Self-expression, personal goals</td><td>Family, community, interdependence</td></tr>
+<tr><td>View of self</td><td>Autonomous and unique</td><td>Connected and relational</td></tr>
+<tr><td>Type of self</td><td><b>Independent self</b>: defined by choices, traits, achievements</td><td><b>Interdependent self</b>: defined by social roles, relationships, group identity</td></tr>
+<tr><td>Motto</td><td>“I am who I choose to be”</td><td>“I am who I am in relation to others”</td></tr></table></div></section>
+
+<section id="fil"><h2>The Filipino Concept of Self</h2>
+<ul><li><b>Kapwa (shared identity):</b> central to the Filipino self. The self is not entirely separate from others; root of <b>empathy, compassion and social obligation</b>.</li></ul>
+<h3>Levels of social interaction</h3>
+<div class="tw"><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td><b>Pakikitungo</b></td><td>Transaction / civility with</td></tr>
+<tr><td><b>Pakikisalamuha</b></td><td>Interaction with</td></tr>
+<tr><td><b>Pakikilahok</b></td><td>Joining / participating with</td></tr>
+<tr><td><b>Pakikibagay</b></td><td>In conformity / in accord with</td></tr>
+<tr><td><b>Pakikisama</b></td><td>Being along with (slide reads "being alone with")</td></tr>
+<tr><td><b>Pakikipagpalagayan / pakikipagpalagayang-loob</b></td><td>Being in rapport / understanding / acceptance with</td></tr>
+<tr><td><b>Pakikisangkot</b> (slide: "pakikisanghot")</td><td>Getting involved with</td></tr>
+<tr><td><b>Pakikiisa</b></td><td>Being one with</td></tr></table></div>
+<h3>Core Filipino values</h3>
+<div class="tw"><table><tr><th>Value</th><th>Meaning</th></tr>
+<tr><td><b>Hiya</b></td><td>Sense of shame or modesty; guides appropriate behavior, encourages conformity to norms, maintains group harmony and respect</td></tr>
+<tr><td><b>Pakikisama</b></td><td>Getting along with others; promotes smooth relationships; values group consensus and avoiding conflict</td></tr>
+<tr><td><b>Pakikiramdam</b></td><td>Sensitivity to others; deep social awareness; reading emotional cues and unspoken rules</td></tr>
+<tr><td><b>Utang na loob</b></td><td>Debt of gratitude; deep obligation to repay kindness or favor; rooted in familial and patron-client relationships</td></tr></table></div></section>
+
+<div class="part">Part 3 · Psychological Perspective on the Self</div>
+
+<section id="psy"><h2>What Is Psychology?</h2>
+<div class="box"><b>You should be able to:</b> define psychology and its goals; identify major perspectives; explain James's "I" and "Me"; describe Lester's unified vs. multiple self; explain Winnicott's true/false self; describe Rogers's real self, ideal self and congruence; explain Bandura's self-efficacy and the four stages of observational learning.</div>
+<ul><li><b>Psychology:</b> the <b>scientific study of the mind and behavior</b>: how people think, feel and act, through experimentation and observation.</li>
+<li>Investigates: motivation, perception, personality, cognition, intelligence, emotion, mental health.</li></ul>
+<div class="tw"><table><tr><th>Perspective</th><th>Focus</th><th>Key concepts</th></tr>
+<tr><td><b>Psychodynamic</b></td><td>Unconscious processes, early childhood</td><td>Unconscious drives and conflicts; childhood trauma</td></tr>
+<tr><td><b>Behavioral</b></td><td>Observable, learned behavior</td><td>Classical conditioning (Pavlov); operant conditioning (Skinner)</td></tr>
+<tr><td><b>Cognitive</b></td><td>Thinking, learning, memory</td><td>Information processing; schemas; cognitive distortions and biases</td></tr>
+<tr><td><b>Biological</b></td><td>Brain, nervous system, genetics</td><td>Brain structures, neurotransmitters; hormonal and genetic influences; CNS</td></tr>
+<tr><td><b>Cross-Cultural</b></td><td>How culture shapes thoughts, feelings, behavior</td><td>Norms, values, traditions; comparison across societies; globalization</td></tr>
+<tr><td><b>Evolutionary</b></td><td>Adaptive value of behavior over time</td><td>Natural selection; evolution of behavior patterns; reproduction and gene transmission</td></tr>
+<tr><td><b>Humanistic</b></td><td>Growth, potential, self-fulfillment</td><td>Free will, personal responsibility; self-actualization; inherent goodness</td></tr></table></div></section>
+
+<section id="james"><h2>William James</h2>
+<ul><li>American philosopher and psychologist; first educator to offer a psychology course in the U.S.; the <b>“Father of American Psychology.”</b></li></ul>
+<div class="tw"><table><tr><th>Part</th><th>Description</th></tr>
+<tr><td><b>The “Me”: the known self</b></td><td>The <b>empirical self</b>: everything a person can call their own</td></tr>
+<tr><td>&nbsp;&nbsp;↳ <b>Material self</b></td><td>Body, clothes, possessions, family</td></tr>
+<tr><td>&nbsp;&nbsp;↳ <b>Social self</b></td><td>The self as recognized by others; we have <b>multiple social selves</b> depending on relationships (student, friend, sibling)</td></tr>
+<tr><td>&nbsp;&nbsp;↳ <b>Spiritual self</b></td><td>Inner, subjective being: personality, values, conscience, beliefs, personal identity, moral center</td></tr>
+<tr><td><b>The “I”: the knowing self</b></td><td>The <b>pure ego</b>: the observer, thinker and active agent that experiences and reflects on the "Me"; gives <b>continuity of identity across time</b></td></tr></table></div></section>
+
+<section id="lester"><h2>David Lester</h2>
+<ul><li>Existential psychologist and suicidologist; explored the inner nature of the self amid distress, isolation and the search for meaning; focus on the tension between a <b>unified</b> and a <b>fragmented</b> self.</li>
+<li><b>Unified self:</b> coherent, stable, consistent; provides grounding, identity and direction; linked to <b>well-being and resilience</b>; self-experience stays steady across roles and situations.</li>
+<li><b>Multiple/fragmented self:</b> made of different roles, identities or internal voices that may clash. Not always unhealthy, but can cause distress when <b>unintegrated</b>.</li>
+<li><b>Risks of fragmentation:</b> inner conflict and identity confusion; emptiness or isolation; trouble making decisions or keeping stable relationships; may contribute to existential distress or suicidal ideation.</li>
+<li><b>Integration and meaning:</b> integrating the multiple selves into a <b>coherent narrative</b> helps people cope with challenges, feel purpose and continuity, and avoid psychological disintegration.</li></ul></section>
+
+<section id="winn"><h2>Donald Winnicott</h2>
+<ul><li>English pediatrician and psychoanalyst (<b>object relations theory</b>, developmental psychology). The self develops through <b>early interactions with caregivers</b>, especially the mother; a healthy self feels real, spontaneous and connected, emerging from emotional attunement and care.</li>
+<li><b>True self:</b> authentic, spontaneous self that arises when the infant feels <b>safe and accepted</b>; rooted in genuine feelings, creativity and personal experience; develops when the caregiver is “good enough”; allows free expression of needs and emotions.</li>
+<li><b>False self:</b> a <b>protective facade</b> developed when the environment doesn't allow authentic expression; the child over-complies to gain approval or avoid rejection; may seem polite or "well-behaved" but feels <b>empty or disconnected</b>.</li>
+<li><b>Good-enough parenting:</b> responsive and attuned but allows <b>gradual frustration</b>; helps the child move from total dependence to independence; creates safe space for self-expression.</li>
+<li><b>Holding environment:</b> the emotional and physical environment that “holds” the child psychologically; gives security, continuity and containment so the child can explore, take emotional risks and form identity.</li></ul></section>
+
+<section id="rog"><h2>Carl Rogers</h2>
+<ul><li>American psychologist; a founder of <b>humanistic psychology</b>. Each person has a <b>self-concept</b> shaped by life experiences, especially early relationships. Stressed self-acceptance, personal growth and <b>self-actualization</b>.</li>
+<li><b>Self-concept:</b> the organized, consistent set of beliefs and perceptions about oneself: <b>self-image</b> (how you see yourself), <b>ideal self</b> (how you wish to be), <b>self-worth</b> (how much you value yourself).</li>
+<li><b>Congruence:</b> self-image aligns with experiences and ideal self → psychological health. <b>Incongruence:</b> mismatch between real experiences and self-concept → anxiety, confusion, low self-esteem.</li>
+<li><b>Self-actualization:</b> the innate, lifelong drive to grow, fulfill potential and become one's true self; possible only in an environment of <b>psychological safety and acceptance</b>.</li>
+<li><b>Conditions of worth:</b> feeling valued only when meeting expectations (smart, obedient) → incongruence and a <b>false self</b>. <b>Unconditional positive regard:</b> being accepted and loved without conditions → the true self can emerge and grow.</li></ul></section>
+
+<section id="band"><h2>Albert Bandura</h2>
+<ul><li>Canadian-American psychologist (Stanford); social cognitive theory, therapy, personality; helped bridge <b>behaviorism and cognitive psychology</b>.</li>
+<li>The self is a <b>socially constructed, self-reflective, self-regulating system</b>. <b>Social Learning Theory</b> (later <b>Social Cognitive Theory</b>): we form the self by observing others, reflecting on experiences and evaluating our own capabilities.</li>
+<li><b>Reciprocal determinism:</b> <b>personal factors</b> (thoughts, self-perceptions), <b>behavior</b> and <b>environment</b> all influence one another; the self is shaped through constant back-and-forth with surroundings.</li></ul>
+<h3>Observational learning: 4 stages</h3>
+<div class="tw"><table><tr><th>Attention</th><th>Retention</th><th>Reproduction</th><th>Motivation</th></tr></table></div>
+<h3>Self-efficacy</h3>
+<p>Our <b>belief in our ability to succeed in specific situations</b>. Shaped by:</p>
+<ul><li><b>Mastery experiences</b>: doing something successfully</li><li><b>Vicarious experiences</b>: seeing others succeed</li><li><b>Social persuasion</b>: encouragement or discouragement</li><li><b>Emotional and physiological states</b>: how we feel about a task</li></ul></section>
+
+<section id="pcmp"><h2>Psychologists at a Glance</h2>
+<div class="tw"><table><tr><th>Theorist</th><th>Core idea of the self</th><th>Key terms</th></tr>
+<tr><td><b>James</b></td><td>Known self (“Me”) and knowing self (“I”)</td><td>Material, social, spiritual self; pure ego</td></tr>
+<tr><td><b>Lester</b></td><td>Unified vs. fragmented self</td><td>Integration, coherent narrative</td></tr>
+<tr><td><b>Winnicott</b></td><td>Self develops through caregiving</td><td>True/false self, good enough, holding environment</td></tr>
+<tr><td><b>Rogers</b></td><td>Self-concept and growth</td><td>Ideal self, congruence, unconditional positive regard</td></tr>
+<tr><td><b>Bandura</b></td><td>Self shaped by observation and belief in ability</td><td>Reciprocal determinism, self-efficacy</td></tr></table></div></section>
+
+<section id="ponder"><h2>Questions to Ponder (from the slides)</h2>
+<p>Select a line and tap <b>Note</b> to write your own answers beside it.</p>
+<h3>Philosophy</h3>
+<ul><li>Do you agree that material possessions do not bring genuine happiness? Why or why not?</li>
+<li>Recall a time when acting irrationally led to a negative outcome. How might it have changed with a more rational approach?</li>
+<li>Are you more aligned with rationalism or empiricism? Explain.</li>
+<li>Do you agree with Kant's Universality Principle? Can you think of an acceptable exemption?</li>
+<li>Does your ego balance the demands of your id and superego, or does one dominate? Give examples.</li>
+<li>Do you agree with dualism? Why or why not?</li></ul>
+<h3>Sociology &amp; Anthropology</h3>
+<ul><li>Which behaviors have become more or less socially accepted over time, and what does that reveal about changing norms and values?</li>
+<li>Give an example of your behavior being influenced by the generalized other.</li>
+<li>Give an experience that illustrates the looking-glass self.</li>
+<li>Recall a time you tried to save “face” after a mistake. What strategies did you use?</li>
+<li>Where do you see pakikisama in Filipino behavior or practice?</li>
+<li>How is utang na loob taught or reinforced in Filipino culture?</li></ul>
+<h3>Psychology</h3>
+<ul><li>Do you feel you have a unified or a fragmented self? What influenced this?</li>
+<li>How does your self-image match or differ from your ideal self?</li>
+<li>Is your self-efficacy strong or weak? What factors influence it?</li></ul></section>
+</main>
+<footer>Compiled from your three Understanding the Self lessons. Main references: Corpuz et al. (2020), <i>Understanding the Self</i>; Otig et al. (2018), <i>A Holistic Approach in Understanding the Self</i>; Feist et al. (2021), <i>Theories of Personality</i>; Giddens et al. (2024); Macionis (2024); Pe-Pua (2018).</footer>
+
+<div id="bar"></div>
+<div id="pop" hidden><button class="c" data-a="hy" style="background:#ffd500" title="Yellow"></button><button class="c" data-a="hg" style="background:#46d26e" title="Green"></button><button class="c" data-a="hp" style="background:#ff5fa5" title="Pink"></button><button class="c" data-a="hb" style="background:#46a5ff" title="Blue"></button><button class="bk" data-a="blank">▭ Blank</button><button data-a="note">📝 Note</button><button data-a="clear">✕ Clear</button></div>
+<div id="tb"><button id="bStudy">🎯 <span>Study</span></button><button id="bTerms">🅱 <span>Hide terms</span></button><button id="bRehide">🙈 <span>Re-hide</span></button><button id="bImg">🖼 <span>Image</span></button><button id="bTheme">🌓 <span>Theme</span></button><button id="bPrint">🖨 <span>Print</span></button><button id="bClear">🗑 <span>Reset</span></button></div>
+<input type="file" id="fi" accept="image/*" multiple hidden><div id="toast"></div>
+<script>
+(()=>{
+const KEY='uts_v1',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],uid=()=>Math.random().toString(36).slice(2,9);
+let S={ann:[],notes:[],pics:[]},last=-1,cur=null,clearIds=null,tm,tt;
+try{S=Object.assign(S,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
+const main=$('main'),blocks=$$('main section p,main section li,main section td,main section th,main section h3,main section .box'),pop=$('#pop'),body=document.body;
+const mine=document.createElement('section');mine.id='mine';mine.innerHTML='<h2>My Pictures</h2><p style="color:var(--mut);font-size:.9rem">Pictures pasted without choosing a spot land here.</p><div id="gal"></div>';main.appendChild(mine);const gal=$('#gal');
+const flash=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1400)};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));flash('Saved')}catch(e){flash('Storage full: remove a picture')}};
+const tn=b=>{const o=[],w=document.createTreeWalker(b,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())if(!n.parentElement.closest('.note,.pic'))o.push(n);return o};
+const clean=(b,r)=>{const d=document.createElement('div');d.appendChild(r?r.cloneContents():b.cloneNode(true));d.querySelectorAll('.note,.pic').forEach(x=>x.remove());return d.textContent};
+const off=(b,c,o)=>{const r=document.createRange();r.selectNodeContents(b);r.setEnd(c,o);return clean(b,r).length};
+function wrap(b,s,e,cls,id){let pos=0;for(const n of tn(b)){const len=n.nodeValue.length,a=Math.max(s,pos),z=Math.min(e,pos+len);if(a<z){if(z-pos<len)n.splitText(z-pos);const m=a-pos>0?n.splitText(a-pos):n,sp=document.createElement('span');sp.className='ann '+cls;sp.dataset.id=id;m.parentNode.insertBefore(sp,m);sp.appendChild(m)}pos+=len}}
+function addAnn(r,c){const j=[];blocks.forEach((b,i)=>{if(!r.intersectsNode(b))return;const t=clean(b),s=b.contains(r.startContainer)?off(b,r.startContainer,r.startOffset):0,e=b.contains(r.endContainer)?off(b,r.endContainer,r.endOffset):t.length;if(e>s&&t.slice(s,e).trim())j.push({id:uid(),b:i,s,e,c})});j.forEach(a=>{S.ann.push(a);wrap(blocks[a.b],a.s,a.e,a.c,a.id)});save()}
+function rmAnn(ids){S.ann=S.ann.filter(a=>!ids.includes(a.id));$$('.ann').filter(x=>ids.includes(x.dataset.id)).forEach(x=>{const p=x.parentNode;while(x.firstChild)p.insertBefore(x.firstChild,x);x.remove();p.normalize()});save()}
+function mkNote(n){const b=blocks[n.b],a=document.createElement('aside');a.className='note';a.dataset.id=n.id;a.innerHTML='<button class="x" title="Delete">×</button><div class="q"></div><div class="nt" contenteditable="true" data-ph="Write your note…"></div>';a.querySelector('.q').textContent=n.q?'“'+n.q+'”':'';a.querySelector('.nt').textContent=n.t||'';const tb=b.closest('td,th');if(tb){tb.closest('.tw').after(a)}else{a.classList.add('side');b.appendChild(a)}return a}
+function mkPic(p){const f=document.createElement('figure');f.className='pic';f.dataset.id=p.id;f.innerHTML='<button class="x" title="Remove">×</button><img alt=""><figcaption contenteditable="true" data-ph="Add a caption…"></figcaption>';f.querySelector('img').src=p.src;f.querySelector('figcaption').textContent=p.cap||'';const b=blocks[p.b];if(!b)gal.appendChild(f);else{const tb=b.closest('td,th');(tb?tb.closest('.tw'):b.tagName==='LI'?b.parentElement:b).after(f)}return f}
+S.ann.forEach(a=>{if(blocks[a.b])wrap(blocks[a.b],a.s,a.e,a.c,a.id)});S.notes.forEach(n=>blocks[n.b]&&mkNote(n));S.pics.forEach(mkPic);
+function addImg(file){const rd=new FileReader();rd.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1000/im.width),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);const p={id:uid(),b:last,src:c.toDataURL('image/jpeg',.8),cap:''};S.pics.push(p);mkPic(p).scrollIntoView({block:'center'});save()};im.src=rd.result};rd.readAsDataURL(file)}
+document.addEventListener('paste',e=>{const f=[...(e.clipboardData?.items||[])].filter(i=>i.type.startsWith('image/')).map(i=>i.getAsFile()).filter(Boolean);if(f.length){e.preventDefault();f.forEach(addImg)}});
+document.addEventListener('dragover',e=>e.preventDefault());document.addEventListener('drop',e=>{const f=[...(e.dataTransfer?.files||[])].filter(x=>x.type.startsWith('image/'));if(f.length){e.preventDefault();f.forEach(addImg)}});
+$('#fi').onchange=e=>{[...e.target.files].forEach(addImg);e.target.value=''};
+function place(r){const rc=r.getBoundingClientRect(),w=pop.offsetWidth,co=matchMedia('(pointer:coarse)').matches;let t=co?rc.bottom+14:rc.top-pop.offsetHeight-10;if(t<60)t=rc.bottom+14;pop.style.top=Math.max(8,t)+'px';pop.style.left=Math.min(Math.max(8,rc.left+rc.width/2-w/2),innerWidth-w-8)+'px'}
+function show(r,ids){cur=r.cloneRange();clearIds=ids||null;pop.classList.toggle('one',!!ids);pop.hidden=false;place(cur)}
+const hide=()=>{pop.hidden=true;clearIds=null};
+document.addEventListener('selectionchange',()=>{clearTimeout(tm);tm=setTimeout(()=>{const s=getSelection();if(!s.rangeCount||s.isCollapsed||!s.toString().trim()){if(!clearIds)hide();return}const r=s.getRangeAt(0),c=r.commonAncestorContainer,el=c.nodeType===1?c:c.parentElement;if(!main.contains(el)||el.closest('.note,.pic,#mine'))return;show(r)},220)});
+addEventListener('scroll',()=>{if(!pop.hidden&&cur)place(cur);$('#bar').style.width=(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+pop.addEventListener('mousedown',e=>e.preventDefault());
+pop.addEventListener('click',e=>{const a=e.target.closest('button')?.dataset.a;if(!a||!cur)return;
+if(a==='clear'){rmAnn(clearIds||$$('.ann').filter(x=>cur.intersectsNode(x)).map(x=>x.dataset.id))}
+else if(a==='note'){let i=blocks.findIndex(b=>b.contains(cur.startContainer));if(i<0)i=blocks.findIndex(b=>cur.intersectsNode(b));if(i>=0){const n={id:uid(),b:i,q:cur.toString().trim().slice(0,70),t:''};S.notes.push(n);const el=mkNote(n);save();el.querySelector('.nt').focus()}}
+else addAnn(cur,a);
+getSelection().removeAllRanges();hide()});
+main.addEventListener('pointerup',e=>{if(e.target.closest('.note,.pic'))return;const i=blocks.indexOf(e.target.closest('p,li,td,th,h3,.box'));if(i>=0)last=i});
+document.addEventListener('click',e=>{const x=e.target.closest('.x');if(x){const el=x.closest('.note,.pic'),id=el.dataset.id;S.notes=S.notes.filter(n=>n.id!==id);S.pics=S.pics.filter(p=>p.id!==id);el.remove();save();return}
+const bb=e.target.closest('main section b');if(bb&&body.classList.contains('qb')&&!bb.closest('.note')){bb.classList.toggle('rev');return}
+const a=e.target.closest('.ann');if(a&&getSelection().isCollapsed){if(a.classList.contains('blank')&&body.classList.contains('study')){a.classList.toggle('rev');return}const ids=[];let p=a;while(p){if(p.classList?.contains('ann'))ids.push(p.dataset.id);p=p.parentElement}const r=document.createRange();r.selectNodeContents(a);show(r,ids);return}
+if(!e.target.closest('#pop')&&getSelection().isCollapsed)hide()});
+document.addEventListener('input',e=>{const el=e.target.closest('.note,.pic');if(!el)return;const id=el.dataset.id,n=S.notes.find(n=>n.id===id),p=S.pics.find(p=>p.id===id);if(n)n.t=el.querySelector('.nt').innerText;if(p)p.cap=el.querySelector('figcaption').innerText;clearTimeout(tm);tm=setTimeout(save,500)});
+const tg=(id,cls)=>$(id).onclick=()=>$(id).classList.toggle('on',body.classList.toggle(cls));
+tg('#bStudy','study');tg('#bTerms','qb');
+$('#bRehide').onclick=()=>{$$('.rev').forEach(x=>x.classList.remove('rev'));flash('Hidden again')};
+$('#bImg').onclick=()=>$('#fi').click();$('#bPrint').onclick=()=>{try{print()}catch(e){flash('Use your browser print')}};
+const R=document.documentElement,isDark=()=>R.dataset.theme?R.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+try{const t=localStorage.getItem('uts_theme');if(t)R.dataset.theme=t}catch(e){}
+$('#bTheme').onclick=()=>{const t=isDark()?'light':'dark';R.dataset.theme=t;try{localStorage.setItem('uts_theme',t)}catch(e){}};
+let rc=0;$('#bClear').onclick=()=>{if(rc++){S={ann:[],notes:[],pics:[]};try{localStorage.removeItem(KEY)}catch(e){}location.reload()}else{flash('Tap Reset again to erase ALL your marks');setTimeout(()=>rc=0,3000)}};
+})();
+</script>
+</body></html>
